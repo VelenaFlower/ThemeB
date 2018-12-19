@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>B1</title>
+</head>
+<body>
+<p><b>Домашнее задание B1</b> <br>
+    Доработать проект MOOD так, чтобы цвета не повторялись. Для контроля повторения цветов использовать хэш.</p>
+<p>Цвета смотри в консоле.</p>
+<p><mark>В самом конспекте проекта не нашла. Наверное к нему шли еще дополнительные материалы, так что поискала такое
+    задание в интернете и оттуда взяла код проекта.</mark></p>
+<script>
+    "use strict";
+
+    function randomDiap(n,m) {
+        return Math.floor(Math.random()*(m-n+1))+n;
+    }
+
+    function mood(colorsCount) {
+        var colors=[ '', 'красный', 'оранжевый', 'жёлтый', 'зелёный', 'голубой', 'синий', 'фиолетовый' ];
+
+        console.log( 'цветов: ' + colorsCount );
+        for (let i=1; i<=colorsCount; i++) {
+            var n=randomDiap(1,colors.length-1);
+            var colorName = colors.splice(n, 1)[0];
+
+            var addedColors = [
+                {
+                    red: 'красный',
+                    orange: 'оранжевый',
+                    yellow: 'желтый',
+                    green: 'зеленый',
+                    blue: 'голубой',
+                    blue2: 'синий',
+                    purple: 'фиолетовый'
+                }
+            ];
+
+            console.log( colorName );
+        }
+    }
+
+    mood(3);
+</script>
+
+</body>
+</html>
